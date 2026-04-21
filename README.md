@@ -21,7 +21,7 @@ Supports all three orienteering disciplines:
 npx skills add salkin/irma-openclaw
 
 # Install Python dependency for the query script
-pip install requests beautifulsoup4
+pip install requests
 ```
 
 ## Quick start

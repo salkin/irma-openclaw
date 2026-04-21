@@ -17,7 +17,7 @@ Usage:
                                   [--class H21|D21|...] [--year YEAR] [--top N]
 
 Requirements:
-  pip install requests beautifulsoup4
+  pip install requests
 """
 
 import argparse
@@ -30,7 +30,7 @@ import sys
 try:
     import requests
 except ImportError:
-    sys.exit("Missing dependency: pip install requests beautifulsoup4")
+    sys.exit("Missing dependency: pip install requests")
 
 BASE_URL = "https://irma.suunnistusliitto.fi"
 CALENDAR_PAGE = f"{BASE_URL}/public/competitioncalendar/list"
@@ -117,12 +117,12 @@ def cmd_calendar(args, irma):
     """Fetch and display competition calendar."""
     disciplines = [args.discipline] if args.discipline else []
     year = str(args.year) if args.year else None
-    month = str(args.month) if args.month else "1"
+    month = str(args.month) if args.month else None
     upcoming = args.upcoming if not year else None
 
     payload = {
         "year": year,
-        "month": month,
+        "month": month or "1",
         "upcoming": upcoming,
         "disciplines": disciplines,
         "areaId": args.area_id,

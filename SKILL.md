@@ -25,7 +25,7 @@ The IRMA web application is Vaadin-based and requires a browser session with CSR
 ### Installation
 
 ```bash
-pip install requests beautifulsoup4
+pip install requests
 ```
 
 ## Usage
